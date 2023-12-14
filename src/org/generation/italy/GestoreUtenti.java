@@ -3,8 +3,6 @@ package org.generation.italy;
 import java.util.HashMap;
 
 import org.genration.italy.model.Account;
-//import org.genration.italy.model.Utente;
-//import org.genration.italy.model.Amministratore;
 
 public class GestoreUtenti {
 	/**
@@ -39,11 +37,24 @@ public class GestoreUtenti {
 		return stato;
 	}
 
-	public void loginUtente(String userName, String password) {
+	public Account loginUtente(String userName, String password) {
+		String passwordRitornata = listaUtenti.get(userName).getPassword();
+		Account account = null;
 		
+		if(listaUtenti.containsKey(userName)) {
+			if(passwordRitornata.equals(password)) {
+				account = listaUtenti.get(userName);
+			}
+		}
+		
+		return account;
 	}
 
 	public void resettaPassword(String userName, String password) {
+		String passwordRitornata = listaUtenti.get(userName).getPassword();
 		
+		if(listaUtenti.containsKey(userName)) {
+			listaUtenti.get(userName).setPassword(password);
+		}
 	}
 }

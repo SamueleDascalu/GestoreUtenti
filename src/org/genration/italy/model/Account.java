@@ -17,17 +17,20 @@ public class Account {
 		this.nome = nome;
 		this.cognome = cognome;
 	}
+
+	/**
+	 * @return String
+	 */
+	public String getPassword() {
+		return this.password;
+	}
+	
 	
 	/**
 	 * @param password
-	 * @return String
 	 */
-	public String getPassword(String password) {
-		String pswd=null;
-		if(password.equals(this.password)) {
-			pswd=this.password;
-		}
-		return pswd;
+	public void setPassword(String password) {
+		this.password=password;
 	}
 
 	/**
@@ -43,7 +46,7 @@ public class Account {
 		if (vecchiaPassword.equals(this.password)) {
 			// controllo che la password di conferma sia uguale alla nuova password
 			if (confermaNuovaPassword.equals(nuovaPassword)) {
-				if(vecchiaPassword.equals(this.password)) {
+				if(!vecchiaPassword.equals(this.password)) {
 					this.password = nuovaPassword;
 					// operazione eseguita con successo, ritorno true
 					stato = true;
