@@ -17,6 +17,13 @@ public class Account {
 		this.nome = nome;
 		this.cognome = cognome;
 	}
+	
+	/**
+	 * @return String
+	 */
+	public String getUsername() {
+		return this.username;
+	}
 
 	/**
 	 * @return String
@@ -25,12 +32,46 @@ public class Account {
 		return this.password;
 	}
 	
+	/**
+	 * @return String
+	 */
+	public String getNome() {
+		return this.nome;
+	}
+	
+	/**
+	 * @return String
+	 */
+	public String getCognome() {
+		return this.cognome;
+	}
+	
+	/**
+	 * @param username
+	 */
+	public void setUsername(String username) {
+		this.username=username;
+	}
 	
 	/**
 	 * @param password
 	 */
 	public void setPassword(String password) {
 		this.password=password;
+	}
+	
+	/**
+	 * @param nome
+	 */
+	public void setNome(String nome) {
+		this.nome=nome;
+	}
+	
+	/**
+	 * @param cognome
+	 */
+	public void setCognome(String cognome) {
+		this.cognome=cognome;
 	}
 
 	/**
