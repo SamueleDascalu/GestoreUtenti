@@ -37,6 +37,11 @@ public class GestoreUtenti {
 		return stato;
 	}
 
+	/**
+	 * @param userName
+	 * @param password
+	 * @return Account
+	 */
 	public Account loginUtente(String userName, String password) {
 		String passwordRitornata = listaUtenti.get(userName).getPassword();
 		Account account = null;
@@ -50,11 +55,17 @@ public class GestoreUtenti {
 		return account;
 	}
 
+	/**
+	 * @param userName
+	 * @param password
+	 */
 	public void resettaPassword(String userName, String password) {
 		String passwordRitornata = listaUtenti.get(userName).getPassword();
 		
 		if(listaUtenti.containsKey(userName)) {
-			listaUtenti.get(userName).setPassword(password);
+			if(passwordRitornata.equals(password)) {
+				listaUtenti.get(userName).setPassword(password);
+			}
 		}
 	}
 }
