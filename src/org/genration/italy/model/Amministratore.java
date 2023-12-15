@@ -22,4 +22,12 @@ public class Amministratore extends Account {
 		return super.toString()+"\nCodice badge: "+codiceBadge+"\n";
 	}
 	
+	public int getBadge() {
+		return this.codiceBadge;
+	}
+	
+	public void setCodiceBadge(int codice) {
+		this.codiceBadge=codice;
+	}
+	
 }
